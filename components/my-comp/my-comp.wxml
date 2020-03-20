@@ -1,0 +1,2 @@
+<!--components/my-comp/my-comp.wxml-->
+<view>组件内的数据： {{counter}}</view>

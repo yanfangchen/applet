@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <my-comp counter="20"></my-comp>
+  <van-button bindtap="bindViewTap" type="primary">vant按钮</van-button>
+  <view>
+    <text>vant icon</text>
+    <van-icon name="chat" size="40px" color="green" info="99+" />
+  </view>
+  
+  <text>wxs filter的用法</text>
+  <wxs module="filter" src="../../utils/filter/date.wxs"></wxs>
+  <text>{{filter.formatDate(date,':')}}</text> 
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
